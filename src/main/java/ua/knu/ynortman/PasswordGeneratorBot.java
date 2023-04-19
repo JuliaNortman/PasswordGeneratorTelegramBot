@@ -10,34 +10,18 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+import ua.knu.ynortman.models.GptResponse;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.regex.Pattern;
+
+import static ua.knu.ynortman.constants.Constants.*;
 
 @Slf4j
 public class PasswordGeneratorBot extends TelegramLongPollingBot {
-
-    private static final Pattern NUMBER_PATTERN = Pattern.compile("^\\d+$");
-    private final String INCLUDE_SPECIAL_CHARS_PROMPT = "Should special characters - !@#$%^&*: be included?";
-    private final String LENGTH_LIMIT_PROMPT = "Should passphrase be limited in length?";
-    private final String ENTER_MAX_LENGTH_PROMPT = "Enter max length:";
-    private final String START_BUTTON_ID = "/start";
-    private final String PASSWORD_INCLUDE_SPECIAL_CHARS_YES_ID = "password_include_special_chars_yes";
-    private final String PASSWORD_INCLUDE_SPECIAL_CHARS_NO_ID = "password_include_special_chars_no";
-    private final String PASSWORD_LENGTH_LIMIT_YES = "passphrase_length_limit_yes";
-    private final String PASSWORD_LENGTH_LIMIT_NO = "passphrase_length_limit_no";
-    private final String GENERATE_PASSWORD_COMMAND = "generate_password";
-    private final String GENERATE_PASSPHRASE_COMMAND = "generate_passphrase";
-
-
-    private final String BOT_USERNAME = "pass_gen_with_chatgpt_bot";
-    private final String BOT_TOKEN = "6025592581:AAF11j-4fnFkpPm-PddSK1K0aiV0BgS6ofg";
-    private final String OPEN_AI_API_KEY = "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";
-    private final String OPEN_AI_API_CHAT_URL = "https://api.openai.com/v1/chat/completions";
 
     private enum UserState {
         DEFAULT,
@@ -159,8 +143,6 @@ public class PasswordGeneratorBot extends TelegramLongPollingBot {
             e.printStackTrace();
         }
     }
-
-
 
     @Override
     public String getBotUsername() {

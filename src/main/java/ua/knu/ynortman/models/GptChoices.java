@@ -1,4 +1,4 @@
-package ua.knu.ynortman;
+package ua.knu.ynortman.models;
 
 import lombok.Data;
 
