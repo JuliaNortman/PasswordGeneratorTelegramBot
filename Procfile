@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp target/classes:target/dependency/* ua.knu.ynortman.Main
+worker: java $JAVA_OPTS -cp target/classes:target/dependency/* ua.knu.ynortman.Main
