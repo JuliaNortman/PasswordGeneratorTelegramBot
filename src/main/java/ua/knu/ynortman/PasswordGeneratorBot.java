@@ -151,7 +151,8 @@ public class PasswordGeneratorBot extends TelegramLongPollingBot {
 
     @Override
     public String getBotToken() {
-        return BOT_TOKEN;
+        log.info(System.getenv(TG_BOT_TOKEN_ENV_NAME));
+        return System.getenv(TG_BOT_TOKEN_ENV_NAME);
     }
 
     public String generatePassword(boolean includeSpecialChars) {
@@ -215,7 +216,7 @@ public class PasswordGeneratorBot extends TelegramLongPollingBot {
         // Prepare the API request
         Request request = new Request.Builder()
                 .url(OPEN_AI_API_CHAT_URL)
-                .header("Authorization", "Bearer " + OPEN_AI_API_KEY)
+                .header("Authorization", "Bearer " + System.getenv(OPEN_AI_API_KEY_ENV_NAME))
                 .header("Content-Type", "application/json")
                 .post(requestBody)
                 .build();

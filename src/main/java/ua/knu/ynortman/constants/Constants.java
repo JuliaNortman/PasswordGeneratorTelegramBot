@@ -17,7 +17,8 @@ public class Constants {
 
 
     public static final String BOT_USERNAME =  "pass_gen_with_chatgpt_bot";
-    public static final String BOT_TOKEN = "6025592581:AAF11j-4fnFkpPm-PddSK1K0aiV0BgS6ofg";
-    public static final String OPEN_AI_API_KEY = "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";
     public static final String OPEN_AI_API_CHAT_URL = "https://api.openai.com/v1/chat/completions";
+
+    public static final String TG_BOT_TOKEN_ENV_NAME = "TELERAM_BOT_TOKEN";
+    public static final String OPEN_AI_API_KEY_ENV_NAME = "OPEN_AI_API_KEY";
 }
