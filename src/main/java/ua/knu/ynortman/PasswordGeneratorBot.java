@@ -179,7 +179,8 @@ public class PasswordGeneratorBot extends TelegramLongPollingBot {
             prompt = "You are a password generator tool. Generate a reliable password with at max {limit} characters, " +
                     "at least one uppercase and at least one lowercase letter, at least one number, at least one " +
                     "special character from the six randomly chosen nouns. All six nouns have to be used in password. " +
-                    "Password has to follow the length limitation. Your answer must contain just resulted " +
+                    "Password has to follow the length limitation, if it exceeds it then replace couple of letters " +
+                    "with numbers or symbols but do not throw out words. Your answer must contain just resulted " +
                     "password, no other words or symbols";
             prompt = prompt.replace("{limit}", String.valueOf(limit));
         } else {
