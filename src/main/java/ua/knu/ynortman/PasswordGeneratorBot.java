@@ -151,7 +151,6 @@ public class PasswordGeneratorBot extends TelegramLongPollingBot {
 
     @Override
     public String getBotToken() {
-        log.info(System.getenv(TG_BOT_TOKEN_ENV_NAME));
         return System.getenv(TG_BOT_TOKEN_ENV_NAME);
     }
 
@@ -211,7 +210,7 @@ public class PasswordGeneratorBot extends TelegramLongPollingBot {
                 "    \"temperature\": 0.5\n" +
                 "}";
         requestBodyJson = requestBodyJson.replace("{prompt}", prompt);
-        log.info("Request body: {}", requestBodyJson);
+        log.debug("Request body: {}", requestBodyJson);
         RequestBody requestBody = RequestBody.create(requestBodyJson, MediaType.parse("application/json; charset=utf-8"));
 
         // Prepare the API request
